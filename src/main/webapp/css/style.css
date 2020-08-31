@@ -1,0 +1,11 @@
+.header {
+    padding: 20px 0;
+    background-color: #4682B4;
+    border-bottom: 5px solid #a71d2a;
+    margin-bottom: 20px;
+}
+
+.icon-progwards img {
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,8 @@
+.container {
+    width: 500px;
+}
+
+.btn-primary {
+    background-color: #4682B4;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,14 @@
+.container {
+    width: 500px;
+    height: 400px;
+    position: relative;
+}
+
+ul {
+    position: absolute;
+    bottom: 0;
+}
+
+.btn-primary, .nav-pills .nav-link.active {
+    background-color: #4682B4;
+}
