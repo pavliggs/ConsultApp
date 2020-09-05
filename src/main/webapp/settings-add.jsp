@@ -6,25 +6,29 @@
         <title>Настройки</title>
     </jsp:attribute>
     <jsp:body>
-        <p class="h5">
-            Настройки: добавление
-        </p>
-        <div class="text-center">
-            <form method="post" action="settings-save">
-                <div class="form-group">
-                    <label>
-                        Название параметра
-                        <input type="text" class="fadeIn second" name="name">
-                    </label>
+        <t:template-nav>
+            <jsp:attribute name="description">
+                <p class="h5">
+                    Настройки: добавление
+                </p>
+                <div class="text-left">
+                    <form method="post" action="settings-save">
+                        <div class="form-group">
+                            <label>
+                                Название параметра
+                                <input type="text" class="fadeIn second" name="name">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Значение параметра
+                                <input type="text" class="fadeIn third" name="value">
+                            </label>
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Добавить">
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label>
-                        Значение параметра
-                        <input type="text" class="fadeIn third" name="value">
-                    </label>
-                </div>
-                <input type="submit" class="btn btn-primary" value="Добавить">
-            </form>
-        </div>
+            </jsp:attribute>
+        </t:template-nav>
     </jsp:body>
 </t:template>

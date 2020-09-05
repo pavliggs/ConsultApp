@@ -12,3 +12,7 @@ ul {
 .btn-primary, .nav-pills .nav-link.active {
     background-color: #4682B4;
 }
+
+small {
+    display: block;
+}

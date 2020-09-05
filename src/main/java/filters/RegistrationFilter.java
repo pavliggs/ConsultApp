@@ -17,11 +17,13 @@ public class RegistrationFilter implements Filter {
         DataBase.Users.User user = DataBase.INSTANCE.users.findKey(login);
 
         if (user != null) {
-            req.setAttribute("error-description", "Пользователь с таким логином уже существует! Вам необходимо " +
-                    "ввести другой логин.");
+            req.setAttribute("error-description", "Пользователь с логином " + login + " уже существует!" +
+                    " Вам необходимо ввести другой логин.");
             req.getRequestDispatcher("error.jsp").forward(req, resp);
             return;
         }
+
+
 
         String password = req.getParameter("password2");
         String repeatedPassword = req.getParameter("repeated-password");

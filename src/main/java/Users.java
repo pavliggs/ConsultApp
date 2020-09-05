@@ -10,16 +10,15 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-@WebServlet("/settings-view")
-public class SettingsView extends HttpServlet {
+@WebServlet("/users")
+public class Users extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<DataBase.Settings.Record> settings =
-                new ArrayList<>(DataBase.INSTANCE.settings.getAll());
-        settings.sort(Comparator.comparing(e -> e.getName()));
+        List<DataBase.Users.User> users =
+                new ArrayList<>(DataBase.INSTANCE.users.getAll());
+        users.sort(Comparator.comparing(e -> e.getName()));
 
-        System.out.println(req.getSession().getAttribute("login"));
-        req.setAttribute("settings", settings);
-        req.getRequestDispatcher("settings-view.jsp").forward(req, resp);
+        req.setAttribute("users", users);
+        req.getRequestDispatcher("users.jsp").forward(req, resp);
     }
 }

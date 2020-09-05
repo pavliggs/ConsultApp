@@ -26,8 +26,28 @@
 
   <filter-mapping>
     <filter-name>AuthorizedFilter</filter-name>
-    <url-pattern>/settings-view</url-pattern>
+    <url-pattern>/home</url-pattern>
   </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>AuthorizedFilter</filter-name>
+    <url-pattern>/users</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>AuthorizedFilter</filter-name>
+    <url-pattern>/schedule</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>AuthorizedFilter</filter-name>
+    <url-pattern>/settings/*</url-pattern>
+  </filter-mapping>
+
+<!--  <filter-mapping>-->
+<!--    <filter-name>AuthorizedFilter</filter-name>-->
+<!--    <url-pattern>/*</url-pattern>-->
+<!--  </filter-mapping>-->
 
   <filter-mapping>
     <filter-name>RegistrationFilter</filter-name>

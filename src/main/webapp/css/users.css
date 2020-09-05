@@ -1,0 +1,32 @@
+.wrapper {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #515151;
+    border-radius: 50%;
+}
+.exmpl {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.exmpl img {
+    height: auto;
+    width: 100%;
+}
+
+.status div {
+    padding: 10px;
+    border: 1px solid #1b1e21;
+    border-radius: 5px;
+    /*width: 100px;*/
+    font-weight: bold;
+}
+
+.mentor {
+    background-color: #c82333;
+}
+
+.student {
+    background-color: #28a745;
+}

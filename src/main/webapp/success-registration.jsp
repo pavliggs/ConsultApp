@@ -10,7 +10,7 @@
     </jsp:attribute>
     <jsp:body>
         <div class="container">
-            <h1>Поздравляю! Вы успешно зарегистрировались!</h1>
+            <h1>Поздравляю, ${pageContext.request.getParameter("login")}! Вы успешно зарегистрировались!</h1>
             <a href="${pageContext.request.contextPath}/login"><button class="btn btn-primary">Войти</button></a>
         </div>
     </jsp:body>

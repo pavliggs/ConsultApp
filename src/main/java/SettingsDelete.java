@@ -27,8 +27,7 @@ public class SettingsDelete extends HttpServlet {
             DataBase.INSTANCE.settings.readAll();
             return;
         }
-        System.out.println(req.getSession().getAttribute("login"));
 
-        resp.sendRedirect("settings-view");
+        resp.sendRedirect("settings");
     }
 }

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;text/css;charset=UTF-8" language="java" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <t:template>
@@ -14,12 +14,12 @@
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                     <form method="post" action="user-auth">
                         <div class="form-group">
-                            <label for="exampleInputLogin">Логин</label>
-                            <input type="text" class="form-control" name="login1" id="exampleInputLogin" required>
+                            <label for="login1">Логин</label>
+                            <input type="text" class="form-control" name="login1" id="login1" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Пароль</label>
-                            <input type="password" class="form-control" name="password1" id="exampleInputPassword1" required>
+                            <label for="password1">Пароль</label>
+                            <input type="password" class="form-control" name="password1" id="password1" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Войти</button>
                     </form>
@@ -27,16 +27,19 @@
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                     <form method="post" action="registration">
                         <div class="form-group">
-                            <label for="login">Введите логин</label>
-                            <input type="text" class="form-control" id="login" name="login2" required>
+                            <label for="login2">Введите логин</label>
+                            <input type="text" class="form-control" id="login2" name="login2" required>
                         </div>
                         <div class="form-group">
-                            <label for="password">Введите пароль</label>
-                            <input type="password" id="password" class="form-control" name="password2" required>
+                            <label for="password2">Введите пароль</label>
+                            <input type="password" id="password2" class="form-control" name="password2" minlength="5" required>
+                            <small id="message-length" class="text-danger"></small>
+                            <label id="checkbox"><input type="checkbox" id="password-checkbox"> Показать пароль</label>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Повторите пароль</label>
-                            <input type="password" class="form-control" name="repeated-password">
+                            <label for="repeated-password">Повторите пароль</label>
+                            <input type="password" id="repeated-password" class="form-control" name="repeated-password" minlength="5" required>
+                            <small id="message-different" class="text-danger"></small>
                         </div>
                         <button type="submit" class="btn btn-primary">Далее</button>
                     </form>
@@ -51,5 +54,6 @@
                 </li>
             </ul>
         </div>
+        <script src="${pageContext.request.contextPath}/js/password.js"></script>
     </jsp:body>
 </t:template>

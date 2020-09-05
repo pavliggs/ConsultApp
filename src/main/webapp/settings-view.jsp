@@ -16,7 +16,7 @@
                     Настройки
                 </p>
                 <div class="float-right text-center">
-                    <a href="settings-add.jsp"><img class="w-50" src="images/add-settings.png" alt="Добавить"></a>
+                    <a href="${pageContext.request.contextPath}/settings-add"><img class="w-50" src="${pageContext.request.contextPath}/images/add-settings.png" alt="Добавить"></a>
                 </div>
                 <table class="table table-striped">
                     <thead>
@@ -35,7 +35,7 @@
                                     <form action="settings-delete" method="post">
                                         <input class="btn-del" type="submit" name="${elem.getName()}" value=""/>
                                     </form>
-                                    <form action="settings-edit.jsp" method="post">
+                                    <form action="settings-edit" method="post">
                                         <input class="btn-edit" type="text" name="name" value="${elem.getName()}" hidden />
                                         <input class="btn-edit" type="text" name="value" value="${elem.getValue()}" hidden />
                                         <input class="btn-edit" type="submit" value=""/>

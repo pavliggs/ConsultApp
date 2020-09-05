@@ -23,8 +23,8 @@ public class UserAuth extends HttpServlet {
         DataBase.Users.User user = DataBase.INSTANCE.users.findKey(login);
 
         if (user == null) {
-            req.setAttribute("error-description", "Пользователя с таким логином не существует! Вам необходимо " +
-                    "пройти регистрацию.");
+            req.setAttribute("error-description", "Пользователя с логином " + login + " не существует! " +
+                    "Вам необходимо пройти регистрацию.");
             req.getRequestDispatcher("error.jsp").forward(req, resp);
             return;
         }
@@ -37,6 +37,8 @@ public class UserAuth extends HttpServlet {
         }
 
         session.setAttribute("login", login);
+        session.setAttribute("user", user);
+        // сессия работает пока не удалена
         session.setMaxInactiveInterval(-1);
         resp.sendRedirect("/home");
     }

@@ -1,4 +1,4 @@
-<%@tag description="Template tag for consultapp" pageEncoding="UTF-8" %>
+<%@tag description="Template tag for consultapp" pageEncoding="UTF-8"%>
 <%@attribute name="title" fragment="true" %>
 <%@attribute name="style" fragment="true" %>
 
@@ -16,13 +16,13 @@
 <header>
     <div class="header">
         <div class="icon-progwards">
-            <img src="../../images/progwards.png" alt="progwards_icon">
+            <img src="${pageContext.request.contextPath}/images/progwards.png" alt="progwards_icon">
         </div>
     </div>
 </header>
 <jsp:doBody/>
-<script src="${pageContext.request.contextPath}/js/jquery.js" crossorigin="anonymous"></script>
-<script src="${pageContext.request.contextPath}/js/popper.js" crossorigin="anonymous"></script>
-<script src="${pageContext.request.contextPath}/js/bootstrap.js" crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.js" type="text/javascript" crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/js/popper.js" type="text/javascript" crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.js" type="text/javascript" crossorigin="anonymous"></script>
 </body>
 </html>

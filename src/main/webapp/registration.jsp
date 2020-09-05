@@ -10,8 +10,6 @@
         <title>Регистрация</title>
     </jsp:attribute>
     <jsp:body>
-<%--        <c:set var="login" scope="application" value="${pageContext.request.getParameter('login2')}"/>--%>
-<%--        <c:set var="login" scope="application" value="${pageContext.request.getParameter('password2')}"/>--%>
         <div class="container">
             <form method="post" action="successful-registration" enctype="multipart/form-data">
                 <div class="form-group">
@@ -20,14 +18,14 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Пароль</label>
-                    <input type="password" id="password" class="form-control" name="password" value="${pageContext.request.getParameter('password2')}">
+                    <input type="password" id="password" class="form-control" name="password" value="${pageContext.request.getParameter('password2')}" minlength="5">
                 </div>
                 <div class="form-group">
                     <label for="name">Введите имя и фамилию</label>
                     <input class="form-control" type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isMentor">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="is-mentor">
                     <label class="form-check-label" for="exampleCheck1">Ментор</label>
                 </div>
                 <div class="form-group">
@@ -35,12 +33,22 @@
                     <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="progwardsAccountLink">Введите ссылку на профиль в учебной платформе Progwards</label>
-                    <input class="form-control" type="text" id="progwardsAccountLink" name="linkAccount" required>
+                    <label for="progwards-account">Введите ссылку на профиль в учебной платформе Progwards</label>
+                    <input class="form-control" type="text" id="progwards-account" name="progwards-account" required>
+                </div>
+                <div class="form-group">
+                    <label for="discord-name">Введите ваше имя в системе Discord</label>
+                    <input class="form-control" type="text" id="discord-name" name="discord-name" required>
                 </div>
                 <div class="form-group">
                     <label for="image">Загрузите аватар</label>
                     <input type="file" class="form-control-file" id="image" name="file">
+                    <small class="form-text text-muted">
+                        Выберите файл с одним из нижеперечисленных расширений:<br>
+                        - .jpg (.jpeg);<br>
+                        - .png;<br>
+                        - .gif.
+                    </small>
                 </div>
                 <button type="submit" class="btn btn-primary">Зарегистрировать</button>
             </form>
