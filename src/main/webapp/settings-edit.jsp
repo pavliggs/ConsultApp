@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label>
                                 Значение параметра
-                                <input type="text" class="fadeIn third" name="value" value="${pageContext.request.getParameter("value")}">
+                                <input type="text" class="fadeIn third" name="value" value="${pageContext.request.getParameter("value")}" required>
                             </label>
                         </div>
 

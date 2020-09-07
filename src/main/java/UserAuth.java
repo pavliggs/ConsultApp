@@ -22,6 +22,9 @@ public class UserAuth extends HttpServlet {
         String login = req.getParameter("login1");
         DataBase.Users.User user = DataBase.INSTANCE.users.findKey(login);
 
+        // в таблице настроек всегда должна находится следующая настройка
+        DataBase.INSTANCE.settings.put(new DataBase.Settings.Record("Продолжительность консультации", "15"));
+
         if (user == null) {
             req.setAttribute("error-description", "Пользователя с логином " + login + " не существует! " +
                     "Вам необходимо пройти регистрацию.");

@@ -32,9 +32,12 @@
                                 <td>${elem.getName()}</td>
                                 <td>${elem.getValue()}</td>
                                 <td>
-                                    <form action="settings-delete" method="post">
-                                        <input class="btn-del" type="submit" name="${elem.getName()}" value=""/>
-                                    </form>
+                                    <%--для этой настройки не должно быть возможности удаления--%>
+                                    <c:if test="${elem.getName() != 'Продолжительность консультации'}">
+                                        <form action="settings-delete" method="post">
+                                            <input class="btn-del" type="submit" name="${elem.getName()}" value=""/>
+                                        </form>
+                                    </c:if>
                                     <form action="settings-edit" method="post">
                                         <input class="btn-edit" type="text" name="name" value="${elem.getName()}" hidden />
                                         <input class="btn-edit" type="text" name="value" value="${elem.getValue()}" hidden />

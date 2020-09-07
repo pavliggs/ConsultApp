@@ -34,7 +34,14 @@ public class SuccessRegistration extends HttpServlet {
         DataBase.Users.User user = new DataBase.Users.User(req.getParameter("login"), req.getParameter("password"),
                 false, req.getParameter("name"), isMentor, req.getParameter("email"),
                 req.getParameter("progwards-account"), req.getParameter("discord-name"), fileName);
-        DataBase.INSTANCE.users.put(user);
+
+        if (!DataBase.INSTANCE.users.put(user)) {
+            req.setAttribute("error-description", "Пользователь с логином " + req.getParameter("login") +
+                    " уже существует. Измените логин.");
+            req.getRequestDispatcher("error.jsp").forward(req, resp);
+            return;
+        }
+
         req.getRequestDispatcher("success-registration.jsp").forward(req, resp);
     }
 

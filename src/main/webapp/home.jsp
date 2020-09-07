@@ -12,7 +12,7 @@
                 <h1>Добро пожаловать в личный кабинет, ${sessionScope.get("login")}!</h1>
                 <%--конструкция подобна switch-case--%>
                 <c:choose>
-                    <c:when test="${user.isMentor()}">
+                    <c:when test="${sessionScope.get('user').isMentor()}">
                         <p>
                             Здесь вы можете составить своё расписание для того, чтобы студенты курса могли записаться
                             к вам на консультации.

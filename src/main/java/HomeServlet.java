@@ -12,12 +12,12 @@ import java.io.IOException;
 public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        String login = (String) session.getAttribute("login");
-        if (login != null) {
-            DataBase.Users.User user = DataBase.INSTANCE.users.findKey(login);
-            req.setAttribute("user", user);
-        }
+//        HttpSession session = req.getSession();
+//        String login = (String) session.getAttribute("login");
+//        if (login != null) {
+//            DataBase.Users.User user = DataBase.INSTANCE.users.findKey(login);
+//            req.setAttribute("user", user);
+//        }
         req.getRequestDispatcher("home.jsp").forward(req, resp);
     }
 }
