@@ -56,9 +56,11 @@ public class Schedule extends HttpServlet {
     // получить список объектов InfoSchedule, который выводит информацию о консультации, понятную пользователю
     private List<InfoSchedule> getInfoScheduleList(List<DataBase.Schedule.Value> list) {
         List<InfoSchedule> infoScheduleList = new ArrayList<>();
-        for (DataBase.Schedule.Value elem : list) {
-            infoScheduleList.add(new InfoSchedule(getTime(elem.getStart()), getDurationInMinutes(elem.getDuration())));
-        }
+
+        // создаем список из объектов InfoSchedule
+        list.forEach(e -> infoScheduleList.add(new InfoSchedule(e.getDayOfWeek(),
+                e.getStart(), getTime(e.getStart()), e.getDuration(), getDurationInMinutes(e.getDuration()))));
+
         return infoScheduleList;
     }
 
@@ -72,31 +74,41 @@ public class Schedule extends HttpServlet {
 
     /*
     * внутренний класс, который помогает информацию из базы данных представлять в понятном для пользователя виде
-    * например: duration 900 000, а для пользователя будет 15 (т.е. 15 минут)
+    * например: duration 900 000, а для пользователя будет durationUser 15 (т.е. 15 минут)
     *  */
     public static class InfoSchedule {
-        private LocalTime localTime;
-        private int duration;
+        private int dayOfWeek;
+        private long start;
+        private LocalTime startUser;
+        private long duration;
+        private int durationUser;
 
-        public InfoSchedule(LocalTime localTime, int duration) {
-            this.localTime = localTime;
+        public InfoSchedule(int dayOfWeek, long start, LocalTime startUser, long duration, int durationUser) {
+            this.dayOfWeek = dayOfWeek;
+            this.start = start;
+            this.startUser = startUser;
             this.duration = duration;
+            this.durationUser = durationUser;
         }
 
-        public LocalTime getLocalTime() {
-            return localTime;
+        public int getDayOfWeek() {
+            return dayOfWeek;
         }
 
-        public int getDuration() {
+        public long getStart() {
+            return start;
+        }
+
+        public LocalTime getStartUser() {
+            return startUser;
+        }
+
+        public long getDuration() {
             return duration;
         }
 
-        @Override
-        public String toString() {
-            return "InfoSchedule{" +
-                    "localTime=" + localTime +
-                    ", duration=" + duration +
-                    '}';
+        public int getDurationUser() {
+            return durationUser;
         }
     }
 }

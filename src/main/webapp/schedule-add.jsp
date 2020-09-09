@@ -11,9 +11,6 @@
             <jsp:attribute name="description">
                 <form method="post" action="schedule-save">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="login" value="${sessionScope.get("login")}" hidden>
-                    </div>
-                    <div class="form-group">
                         <label for="day-of-week">День недели</label>
                         <div>
                             <select name="day-of-week" id="day-of-week">

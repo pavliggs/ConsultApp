@@ -8,9 +8,7 @@
     <jsp:body>
         <t:template-nav>
             <jsp:attribute name="description">
-                <p class="h5">
-                    Настройки: редактирование
-                </p>
+                <p class="h5">Настройки: редактирование</p>
                 <div class="text-left">
                     <form method="post" action="settings-save">
                         <div class="form-group">

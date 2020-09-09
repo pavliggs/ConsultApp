@@ -3,6 +3,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:template>
+    <jsp:attribute name="style">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/schedule.css" type="text/css">
+    </jsp:attribute>
     <jsp:attribute name="title">
         <title>Расписание</title>
     </jsp:attribute>
@@ -25,8 +28,21 @@
                                 <td>Понедельник</td>
                                 <td>
                                     <c:forEach var="elem" items="${scheduleMonday}">
-                                        <p>${elem.getLocalTime()}</p>
-                                        <small class="form-text text-muted">${elem.getDuration()} мин.</small>
+                                        <div class="schedule">
+                                            <p>${elem.getStartUser()}</p>
+                                            <span>${elem.getDurationUser()} мин.</span>
+                                            <form method="post" action="schedule-edit">
+                                                <input class="btn-edit" type="number" name="day-of-week" value="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-edit" type="time" name="start" value="${elem.getStartUser()}" hidden>
+                                                <input class="btn-edit" type="number" name="duration" value="${elem.getDurationUser()}" hidden>
+                                                <input class="btn-edit" type="submit" value="">
+                                            </form>
+                                            <form method="post" action="schedule-delete">
+                                                <input class="btn-del" type="text" name="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-del" type="text" name="${elem.getStart()}" hidden>
+                                                <input class="btn-del" type="submit" value="">
+                                            </form>
+                                        </div>
                                     </c:forEach>
                                 </td>
                             </tr>
@@ -36,8 +52,21 @@
                                 <td>Вторник</td>
                                 <td>
                                     <c:forEach var="elem" items="${scheduleTuesday}">
-                                        <p>${elem.getLocalTime()}</p>
-                                        <small class="form-text text-muted">${elem.getDuration()} мин.</small>
+                                        <div class="schedule">
+                                            <p>${elem.getStartUser()}</p>
+                                            <span>${elem.getDurationUser()} мин.</span>
+                                            <form method="post" action="schedule-edit">
+                                                <input class="btn-edit" type="number" name="day-of-week" value="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-edit" type="time" name="start" value="${elem.getStartUser()}" hidden>
+                                                <input class="btn-edit" type="number" name="duration" value="${elem.getDurationUser()}" hidden>
+                                                <input class="btn-edit" type="submit" value="">
+                                            </form>
+                                            <form method="post" action="schedule-delete">
+                                                <input class="btn-del" type="text" name="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-del" type="text" name="${elem.getStart()}" hidden>
+                                                <input class="btn-del" type="submit" value="">
+                                            </form>
+                                        </div>
                                     </c:forEach>
                                 </td>
                             </tr>
@@ -47,8 +76,21 @@
                                 <td>Среда</td>
                                 <td>
                                     <c:forEach var="elem" items="${scheduleWednesday}">
-                                        <p>${elem.getLocalTime()}</p>
-                                        <small class="form-text text-muted">${elem.getDuration()} мин.</small>
+                                        <div class="schedule">
+                                            <p>${elem.getStartUser()}</p>
+                                            <span>${elem.getDurationUser()} мин.</span>
+                                            <form method="post" action="schedule-edit">
+                                                <input class="btn-edit" type="number" name="day-of-week" value="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-edit" type="time" name="start" value="${elem.getStartUser()}" hidden>
+                                                <input class="btn-edit" type="number" name="duration" value="${elem.getDurationUser()}" hidden>
+                                                <input class="btn-edit" type="submit" value="">
+                                            </form>
+                                            <form method="post" action="schedule-delete">
+                                                <input class="btn-del" type="text" name="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-del" type="text" name="${elem.getStart()}" hidden>
+                                                <input class="btn-del" type="submit" value="">
+                                            </form>
+                                        </div>
                                     </c:forEach>
                                 </td>
                             </tr>
@@ -58,8 +100,21 @@
                                 <td>Четверг</td>
                                 <td>
                                     <c:forEach var="elem" items="${scheduleThursday}">
-                                        <p>${elem.getLocalTime()}</p>
-                                        <small class="form-text text-muted">${elem.getDuration()} мин.</small>
+                                        <div class="schedule">
+                                            <p>${elem.getStartUser()}</p>
+                                            <span>${elem.getDurationUser()} мин.</span>
+                                            <form method="post" action="schedule-edit">
+                                                <input class="btn-edit" type="number" name="day-of-week" value="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-edit" type="time" name="start" value="${elem.getStartUser()}" hidden>
+                                                <input class="btn-edit" type="number" name="duration" value="${elem.getDurationUser()}" hidden>
+                                                <input class="btn-edit" type="submit" value="">
+                                            </form>
+                                            <form method="post" action="schedule-delete">
+                                                <input class="btn-del" type="text" name="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-del" type="text" name="${elem.getStart()}" hidden>
+                                                <input class="btn-del" type="submit" value="">
+                                            </form>
+                                        </div>
                                     </c:forEach>
                                 </td>
                             </tr>
@@ -69,8 +124,21 @@
                                 <td>Пятница</td>
                                 <td>
                                     <c:forEach var="elem" items="${scheduleFriday}">
-                                        <p>${elem.getLocalTime()}</p>
-                                        <small class="form-text text-muted">${elem.getDuration()} мин.</small>
+                                        <div class="schedule">
+                                            <p>${elem.getStartUser()}</p>
+                                            <span>${elem.getDurationUser()} мин.</span>
+                                            <form method="post" action="schedule-edit">
+                                                <input class="btn-edit" type="number" name="day-of-week" value="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-edit" type="time" name="start" value="${elem.getStartUser()}" hidden>
+                                                <input class="btn-edit" type="number" name="duration" value="${elem.getDurationUser()}" hidden>
+                                                <input class="btn-edit" type="submit" value="">
+                                            </form>
+                                            <form method="post" action="schedule-delete">
+                                                <input class="btn-del" type="text" name="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-del" type="text" name="${elem.getStart()}" hidden>
+                                                <input class="btn-del" type="submit" value="">
+                                            </form>
+                                        </div>
                                     </c:forEach>
                                 </td>
                             </tr>
@@ -80,8 +148,21 @@
                                 <td>Суббота</td>
                                 <td>
                                     <c:forEach var="elem" items="${scheduleSaturday}">
-                                        <p>${elem.getLocalTime()}</p>
-                                        <small class="form-text text-muted">${elem.getDuration()} мин.</small>
+                                        <div class="schedule">
+                                            <p>${elem.getStartUser()}</p>
+                                            <span>${elem.getDurationUser()} мин.</span>
+                                            <form method="post" action="schedule-edit">
+                                                <input class="btn-edit" type="number" name="day-of-week" value="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-edit" type="time" name="start" value="${elem.getStartUser()}" hidden>
+                                                <input class="btn-edit" type="number" name="duration" value="${elem.getDurationUser()}" hidden>
+                                                <input class="btn-edit" type="submit" value="">
+                                            </form>
+                                            <form method="post" action="schedule-delete">
+                                                <input class="btn-del" type="text" name="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-del" type="text" name="${elem.getStart()}" hidden>
+                                                <input class="btn-del" type="submit" value="">
+                                            </form>
+                                        </div>
                                     </c:forEach>
                                 </td>
                             </tr>
@@ -91,8 +172,21 @@
                                 <td>Воскресенье</td>
                                 <td>
                                     <c:forEach var="elem" items="${scheduleSunday}">
-                                        <p>${elem.getLocalTime()}</p>
-                                        <small class="form-text text-muted">${elem.getDuration()} мин.</small>
+                                        <div class="schedule">
+                                            <p>${elem.getStartUser()}</p>
+                                            <span>${elem.getDurationUser()} мин.</span>
+                                            <form method="post" action="schedule-edit">
+                                                <input class="btn-edit" type="number" name="day-of-week" value="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-edit" type="time" name="start" value="${elem.getStartUser()}" hidden>
+                                                <input class="btn-edit" type="number" name="duration" value="${elem.getDurationUser()}" hidden>
+                                                <input class="btn-edit" type="submit" value="">
+                                            </form>
+                                            <form method="post" action="schedule-delete">
+                                                <input class="btn-del" type="text" name="${elem.getDayOfWeek()}" hidden>
+                                                <input class="btn-del" type="text" name="${elem.getStart()}" hidden>
+                                                <input class="btn-del" type="submit" value="">
+                                            </form>
+                                        </div>
                                     </c:forEach>
                                 </td>
                             </tr>

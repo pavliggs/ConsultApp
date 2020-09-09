@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalTime;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @WebServlet("/schedule-save")
 public class ScheduleSave extends HttpServlet {
@@ -21,9 +19,20 @@ public class ScheduleSave extends HttpServlet {
         int dayOfWeek = toInt(req.getParameter("day-of-week"));
         long timeStart = getTimeStart(req.getParameter("start"));
 
-        DataBase.Schedule.Value value = new DataBase.Schedule.Value(req.getParameter("login"), dayOfWeek,
+        DataBase.Schedule.Value value = new DataBase.Schedule.Value(login, dayOfWeek,
                 timeStart, minuteToMillisecond(req.getParameter("duration")));
 
+        /*
+        * заходим в это условие только со страницы редактирования консультации
+        * предварительно удаляем запись, которая была до изменения
+        *  */
+        if ("true".equals(req.getParameter("edit"))) {
+            long timeStartOld = getTimeStart(req.getParameter("start-old"));
+            DataBase.INSTANCE.schedule.remove(new DataBase.Schedule.Key(login, dayOfWeek,
+                    timeStartOld));
+        }
+
+        // добавляем измененную запись
         if (!DataBase.INSTANCE.schedule.put(value)) {
             req.setAttribute("error-description", login +
                     ", ваше расписание уже содержит данную консультацию");
