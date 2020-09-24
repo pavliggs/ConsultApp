@@ -1,8 +1,8 @@
 input.btn-edit {
     background: url("../images/edit.gif") no-repeat;
     width: 122px;
-    float: right;
     height: 22px;
+    float: right;
     margin-right: 7px;
     margin-bottom: 5px;
     border: none;

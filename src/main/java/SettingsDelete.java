@@ -28,6 +28,6 @@ public class SettingsDelete extends HttpServlet {
             return;
         }
 
-        resp.sendRedirect("settings");
+        resp.sendRedirect("settings-view");
     }
 }

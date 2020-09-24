@@ -13,8 +13,7 @@
                 <div class="text-left">
                     <form method="post" action="schedule-save">
                         <div class="form-group">
-                            <label for="day-of-week">День недели</label>
-                            <input type="number" id="day-of-week" name="day-of-week" value="${pageContext.request.getParameter("day-of-week")}" readonly>
+                            <input type="number" id="day-of-week" name="day-of-week" value="${pageContext.request.getParameter("day-of-week")}" hidden>
                         </div>
                         <div class="form-group">
                             <label for="start">Время начала</label>

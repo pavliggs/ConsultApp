@@ -19,6 +19,8 @@
                                 <option value="3">Среда</option>
                                 <option value="4">Четверг</option>
                                 <option value="5">Пятница</option>
+                                <option value="6">Суббота</option>
+                                <option value="7">Воскресенье</option>
                             </select>
                         </div>
                     </div>
@@ -27,10 +29,10 @@
                         <input class="form-control" type="time" id="start" name="start" required>
                     </div>
                     <div class="form-group">
-                        <label for="duration">Продолжительность</label>
-                        <input type="number" class="form-control" id="duration" name="duration" value="${duration}" required>
+                        <label for="duration">Продолжительность, мин</label>
+                        <input type="text" class="form-control" id="duration" name="duration" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Создать консультацию</button>
+                    <button type="submit" class="btn btn-primary">Создать расписание</button>
                 </form>
             </jsp:attribute>
         </t:template-nav>

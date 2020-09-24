@@ -5,14 +5,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
     <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css">
     <jsp:invoke fragment="style"/>
     <jsp:invoke fragment="title"/>
 </head>
-<body>
+<%--style='overflow-x:hidden;' - убирает горизонтальный скролл--%>
+<body style='overflow-x:hidden;'>
 <header>
     <div class="header">
         <div class="icon-progwards">

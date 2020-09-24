@@ -31,17 +31,17 @@
 
   <filter-mapping>
     <filter-name>AuthorizedFilter</filter-name>
-    <url-pattern>/users</url-pattern>
+    <url-pattern>/users*</url-pattern>
   </filter-mapping>
 
   <filter-mapping>
     <filter-name>AuthorizedFilter</filter-name>
-    <url-pattern>/schedule</url-pattern>
+    <url-pattern>/schedule*</url-pattern>
   </filter-mapping>
 
   <filter-mapping>
     <filter-name>AuthorizedFilter</filter-name>
-    <url-pattern>/settings/*</url-pattern>
+    <url-pattern>/settings*</url-pattern>
   </filter-mapping>
 
 <!--  <filter-mapping>-->

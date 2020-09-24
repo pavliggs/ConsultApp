@@ -39,6 +39,6 @@ public class SettingsSave extends HttpServlet {
             return;
         }
 
-        resp.sendRedirect("settings");
+        resp.sendRedirect("settings-view");
     }
 }

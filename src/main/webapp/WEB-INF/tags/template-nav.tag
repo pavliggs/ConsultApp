@@ -12,10 +12,10 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/schedule">Расписание</a>
                 </c:when>
                 <c:otherwise>
-                    <a class="nav-link" href="#">Консультации</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/consults">Консультации</a>
                 </c:otherwise>
             </c:choose>
-            <a class="nav-link" href="${pageContext.request.contextPath}/settings">Настройки</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/settings-view">Настройки</a>
             <a href="${pageContext.request.contextPath}/exit"><button class="btn btn-primary exit-button">Выйти</button></a>
         </div>
     </div>

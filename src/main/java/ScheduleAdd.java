@@ -11,8 +11,6 @@ import java.io.IOException;
 public class ScheduleAdd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        DataBase.Settings.Record duration = DataBase.INSTANCE.settings.findKey("Продолжительность консультации");
-        req.setAttribute("duration", duration.getValue());
         req.getRequestDispatcher("schedule-add.jsp").forward(req, resp);
     }
 }

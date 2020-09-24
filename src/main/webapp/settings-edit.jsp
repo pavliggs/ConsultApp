@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <t:template>
@@ -14,7 +14,7 @@
                         <div class="form-group">
                             <label>
                                 Название параметра
-                                <input type="text" class="fadeIn second" name="name" value="${pageContext.request.getParameter("name")}" readonly>
+                                <input type="text" class="fadeIn second" name="name" value="${param.get("name")}" readonly>
                             </label>
                         </div>
                         <div class="form-group">
