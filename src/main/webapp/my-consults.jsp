@@ -33,7 +33,7 @@
                                         <input type="text" name="mentor" value="${elem.getMentor()}" hidden>
                                         <input type="text" name="start" value="${elem.getStart()}" hidden>
                                         <input type="text" name="duration" value="${elem.getDuration()}" hidden>
-                                        <input class="btn-del" type="submit" value=""/>
+                                        <input class="btn btn-outline-primary" type="submit" value="Отменить запись"/>
                                     </form>
                                 </td>
                             </tr>
