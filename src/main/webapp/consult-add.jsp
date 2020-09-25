@@ -10,7 +10,7 @@
         <t:template-nav>
             <jsp:attribute name="description">
                 <p class="h5">Запись на консультацию</p>
-                <form method="post" action="consult-save">
+                <form method="post" action="consults-save">
                     <input type="text" name="mentor" value="${param.get("mentor")}" hidden>
                     <div class="form-group">
                         <label>

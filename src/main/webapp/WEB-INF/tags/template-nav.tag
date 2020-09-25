@@ -13,6 +13,7 @@
                 </c:when>
                 <c:otherwise>
                     <a class="nav-link" href="${pageContext.request.contextPath}/consults">Консультации</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/my-consults">Мои консультации</a>
                 </c:otherwise>
             </c:choose>
             <a class="nav-link" href="${pageContext.request.contextPath}/settings-view">Настройки</a>

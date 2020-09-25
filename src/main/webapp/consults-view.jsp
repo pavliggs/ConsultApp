@@ -27,8 +27,8 @@
                                 <td>
                                     <c:forEach var="elem" items="${mondayConsults}">
                                         <div class="consult-form">
-                                            <form method="post" action="consult-add">
-                                                <input type="text" name="mentor" value="${pageContext.request.getParameter("mentor")}" hidden>
+                                            <form method="post" action="consults-add">
+                                                <input type="text" name="mentor" value="${elem.getMentor()}" hidden>
                                                 <input type="number" name="start" value="${elem.getStart()}" hidden>
                                                 <input type="number" name="duration" value="${elem.getDuration()}" hidden>
                                                 <input type="text" name="date-consult" value="${elem.getDateConsult()}" hidden>
@@ -36,7 +36,7 @@
                                                 <input type="number" name="duration-consult" value="${elem.getDurationUser()}" hidden>
                                                 <c:choose>
                                                     <c:when test="${elem.isExistStudent()}">
-                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
+                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}" disabled>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <input type="submit" class="btn btn-outline-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
@@ -54,8 +54,8 @@
                                 <td>
                                     <c:forEach var="elem" items="${tuesdayConsults}">
                                         <div class="consult-form">
-                                            <form method="post" action="consult-add">
-                                                <input type="text" name="mentor" value="${pageContext.request.getParameter("mentor")}" hidden>
+                                            <form method="post" action="consults-add">
+                                                <input type="text" name="mentor" value="${elem.getMentor()}" hidden>
                                                 <input type="number" name="start" value="${elem.getStart()}" hidden>
                                                 <input type="number" name="duration" value="${elem.getDuration()}" hidden>
                                                 <input type="text" name="date-consult" value="${elem.getDateConsult()}" hidden>
@@ -63,7 +63,7 @@
                                                 <input type="number" name="duration-consult" value="${elem.getDurationUser()}" hidden>
                                                 <c:choose>
                                                     <c:when test="${elem.isExistStudent()}">
-                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
+                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}" disabled>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <input type="submit" class="btn btn-outline-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
@@ -81,8 +81,8 @@
                                 <td>
                                     <c:forEach var="elem" items="${wednesdayConsults}">
                                         <div class="consult-form">
-                                            <form method="post" action="consult-add">
-                                                <input type="text" name="mentor" value="${pageContext.request.getParameter("mentor")}" hidden>
+                                            <form method="post" action="consults-add">
+                                                <input type="text" name="mentor" value="${elem.getMentor()}" hidden>
                                                 <input type="number" name="start" value="${elem.getStart()}" hidden>
                                                 <input type="number" name="duration" value="${elem.getDuration()}" hidden>
                                                 <input type="text" name="date-consult" value="${elem.getDateConsult()}" hidden>
@@ -90,7 +90,7 @@
                                                 <input type="number" name="duration-consult" value="${elem.getDurationUser()}" hidden>
                                                 <c:choose>
                                                     <c:when test="${elem.isExistStudent()}">
-                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
+                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}" disabled>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <input type="submit" class="btn btn-outline-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
@@ -108,8 +108,8 @@
                                 <td>
                                     <c:forEach var="elem" items="${thursdayConsults}">
                                         <div class="consult-form">
-                                            <form method="post" action="consult-add">
-                                                <input type="text" name="mentor" value="${pageContext.request.getParameter("mentor")}" hidden>
+                                            <form method="post" action="consults-add">
+                                                <input type="text" name="mentor" value="${elem.getMentor()}" hidden>
                                                 <input type="number" name="start" value="${elem.getStart()}" hidden>
                                                 <input type="number" name="duration" value="${elem.getDuration()}" hidden>
                                                 <input type="text" name="date-consult" value="${elem.getDateConsult()}" hidden>
@@ -117,7 +117,7 @@
                                                 <input type="number" name="duration-consult" value="${elem.getDurationUser()}" hidden>
                                                 <c:choose>
                                                     <c:when test="${elem.isExistStudent()}">
-                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
+                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}" disabled>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <input type="submit" class="btn btn-outline-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
@@ -135,8 +135,8 @@
                                 <td>
                                     <c:forEach var="elem" items="${fridayConsults}">
                                         <div class="consult-form">
-                                            <form method="post" action="consult-add">
-                                                <input type="text" name="mentor" value="${pageContext.request.getParameter("mentor")}" hidden>
+                                            <form method="post" action="consults-add">
+                                                <input type="text" name="mentor" value="${elem.getMentor()}" hidden>
                                                 <input type="number" name="start" value="${elem.getStart()}" hidden>
                                                 <input type="number" name="duration" value="${elem.getDuration()}" hidden>
                                                 <input type="text" name="date-consult" value="${elem.getDateConsult()}" hidden>
@@ -144,7 +144,7 @@
                                                 <input type="number" name="duration-consult" value="${elem.getDurationUser()}" hidden>
                                                 <c:choose>
                                                     <c:when test="${elem.isExistStudent()}">
-                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
+                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}" disabled>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <input type="submit" class="btn btn-outline-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
@@ -162,8 +162,8 @@
                                 <td>
                                     <c:forEach var="elem" items="${saturdayConsults}">
                                         <div class="consult-form">
-                                            <form method="post" action="consult-add">
-                                                <input type="text" name="mentor" value="${pageContext.request.getParameter("mentor")}" hidden>
+                                            <form method="post" action="consults-add">
+                                                <input type="text" name="mentor" value="${elem.getMentor()}" hidden>
                                                 <input type="number" name="start" value="${elem.getStart()}" hidden>
                                                 <input type="number" name="duration" value="${elem.getDuration()}" hidden>
                                                 <input type="text" name="date-consult" value="${elem.getDateConsult()}" hidden>
@@ -171,7 +171,7 @@
                                                 <input type="number" name="duration-consult" value="${elem.getDurationUser()}" hidden>
                                                 <c:choose>
                                                     <c:when test="${elem.isExistStudent()}">
-                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
+                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}" disabled>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <input type="submit" class="btn btn-outline-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
@@ -189,8 +189,8 @@
                                 <td>
                                     <c:forEach var="elem" items="${sundayConsults}">
                                         <div class="consult-form">
-                                            <form method="post" action="consult-add">
-                                                <input type="text" name="mentor" value="${pageContext.request.getParameter("mentor")}" hidden>
+                                            <form method="post" action="consults-add">
+                                                <input type="text" name="mentor" value="${elem.getMentor()}" hidden>
                                                 <input type="number" name="start" value="${elem.getStart()}" hidden>
                                                 <input type="number" name="duration" value="${elem.getDuration()}" hidden>
                                                 <input type="text" name="date-consult" value="${elem.getDateConsult()}" hidden>
@@ -198,7 +198,7 @@
                                                 <input type="number" name="duration-consult" value="${elem.getDurationUser()}" hidden>
                                                 <c:choose>
                                                     <c:when test="${elem.isExistStudent()}">
-                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">
+                                                        <input type="submit" class="btn btn-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}" disabled>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <input type="submit" class="btn btn-outline-primary" value="${elem.getStartUser()} - ${elem.getEndUser()}">

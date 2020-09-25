@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/consult-add")
-public class ConsultAdd extends HttpServlet {
+@WebServlet("/consults-add")
+public class ConsultsAdd extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("consult-add.jsp").forward(req, resp);

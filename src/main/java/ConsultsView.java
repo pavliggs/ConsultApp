@@ -69,9 +69,9 @@ public class ConsultsView extends HttpServlet {
     // получаем список из объектов InfoConsult, в которых находится информация понятная пользователю
     private List<InfoConsult> getListInfoConsult(List<DataBase.Consultations.Consultation> list) {
         List<InfoConsult> consultList = new ArrayList<>();
-        list.forEach(e -> consultList.add(new InfoConsult(getDate(e.getStart()) ,e.getStart(), getTime(e.getStart()),
-                e.getDuration(), getDurationInMinutes(e.getDuration()),
-                getTime(e.getStart() + e.getDuration()), existStudent(e.getStudent()))));
+        list.forEach(e -> consultList.add(new InfoConsult(e.getMentor(), "", getDate(e.getStart()) ,e.getStart(),
+                getTime(e.getStart()), e.getDuration(), getDurationInMinutes(e.getDuration()),
+                getTime(e.getStart() + e.getDuration()), existStudentMethod(e.getStudent()))));
         return consultList;
     }
 
@@ -98,13 +98,15 @@ public class ConsultsView extends HttpServlet {
         return (int)duration / 1000 / 60;
     }
 
-    private boolean existStudent(String login) {
+    private boolean existStudentMethod(String login) {
         if (!login.equals(""))
             return true;
         return false;
     }
 
     public static class InfoConsult {
+        private String mentor;
+        private String nameMentor;
         private String dateConsult;
         private long start;
         private LocalTime startUser;
@@ -113,8 +115,10 @@ public class ConsultsView extends HttpServlet {
         private LocalTime endUser;
         private boolean existStudent;
 
-        public InfoConsult(String dateConsult, long start, LocalTime startUser, long duration,
+        public InfoConsult(String mentor, String nameMentor, String dateConsult, long start, LocalTime startUser, long duration,
                            int durationUser, LocalTime endUser, boolean existStudent) {
+            this.mentor = mentor;
+            this.nameMentor = nameMentor;
             this.dateConsult = dateConsult;
             this.start = start;
             this.startUser = startUser;
@@ -122,6 +126,14 @@ public class ConsultsView extends HttpServlet {
             this.durationUser = durationUser;
             this.endUser = endUser;
             this.existStudent = existStudent;
+        }
+
+        public String getMentor() {
+            return mentor;
+        }
+
+        public String getNameMentor() {
+            return nameMentor;
         }
 
         public String getDateConsult() {
