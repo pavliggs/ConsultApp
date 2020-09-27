@@ -8,7 +8,7 @@ import java.io.IOException;
 @WebServlet("/settings-edit")
 public class SettingsEdit extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("settings-edit.jsp").forward(req, resp);
     }
 }

@@ -1,3 +1,4 @@
+import helpclasses.Consults;
 import ru.progwards.java2.lib.DataBase;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,7 @@ public class ScheduleDelete extends HttpServlet {
 
         HttpSession session = req.getSession();
         String login = (String) session.getAttribute("login");
+        int dayOfWeek = Integer.parseInt(names.get(0));
 
         if (names.size() != 2) {
             req.setAttribute("error-description", "Неправильное число параметров!");
@@ -25,15 +27,17 @@ public class ScheduleDelete extends HttpServlet {
             return;
         }
 
-        if (DataBase.INSTANCE.schedule.remove(new DataBase.Schedule.Key(login, Integer.parseInt(names.get(0)),
+        if (DataBase.INSTANCE.schedule.remove(new DataBase.Schedule.Key(login, dayOfWeek,
                 Long.parseLong(names.get(1)))) == null) {
-            System.out.println("ok");
             req.setAttribute("error-description", "Не удалось удалить элемент! Верояно, " +
                     "он уже не существует.");
             req.getRequestDispatcher("error.jsp").forward(req, resp);
             DataBase.INSTANCE.settings.readAll();
             return;
         }
+
+        // удаляем консультации для данного расписания
+        Consults.delete(login, dayOfWeek);
 
         resp.sendRedirect("schedule");
     }

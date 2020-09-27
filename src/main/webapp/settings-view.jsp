@@ -38,7 +38,7 @@
                                             <input class="btn-del" type="submit" name="${elem.getName()}" value=""/>
                                         </form>
                                     </c:if>
-                                    <form action="settings-edit" method="get" accept-charset="UTF-8">
+                                    <form action="settings-edit" method="post" accept-charset="UTF-8">
                                         <input class="btn-edit" type="text" name="name" value="${elem.getName()}" hidden />
                                         <input class="btn-edit" type="text" name="value" value="${elem.getValue()}" hidden />
                                         <input class="btn-edit" type="submit" value=""/>
