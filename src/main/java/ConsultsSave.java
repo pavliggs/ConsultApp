@@ -58,14 +58,14 @@ public class ConsultsSave extends HttpServlet {
 
             Session mailSession = Session.getDefaultInstance(properties);
             MimeMessage message = new MimeMessage(mailSession);
-            message.setFrom(new InternetAddress("pavel.khovaylo@gmail.com"));
+            message.setFrom(new InternetAddress("ivanov@gmail.com"));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(mailTo));
             message.setSubject("Информация о консультации");
             message.setText("Уведомляем Вас о записи на консультацию: наставник - " + mentorName + ", дата - " + date +
                     ", время - " + timeStart + ", продолжительность - " + duration + " мин.");
 
             Transport tr = mailSession.getTransport();
-            tr.connect("pavel.khovaylo@gmail.com", "trge8i2kpe");
+            tr.connect("ivanov@gmail.com", "qweasdzxc12345");
             tr.sendMessage(message, message.getAllRecipients());
             tr.close();
         } catch (MessagingException ex) {

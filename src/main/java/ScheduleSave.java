@@ -49,6 +49,7 @@ public class ScheduleSave extends HttpServlet {
             return;
         }
 
+        // добавляем консультации на основании расписания
         Consults.addConsults(login, timeStart, durationSchedule, dayOfWeek);
 
         resp.sendRedirect("schedule");
